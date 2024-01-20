@@ -1,0 +1,14 @@
+com\microservice\productservice\repository\ProductRepository.class
+com\microservice\productservice\controller\ProductController.class
+com\microservice\productservice\service\impl\ProductServiceImpl.class
+com\microservice\productservice\exception\ProductServiceCustomException.class
+com\microservice\productservice\payload\response\ErrorResponse$ErrorResponseBuilder.class
+com\microservice\productservice\payload\response\ErrorResponse.class
+com\microservice\productservice\ProductserviceApplication.class
+com\microservice\productservice\service\ProductService.class
+com\microservice\productservice\payload\request\ProductRequest.class
+com\microservice\productservice\entity\Product$ProductBuilder.class
+com\microservice\productservice\payload\request\ProductRequest$ProductRequestBuilder.class
+com\microservice\productservice\payload\response\ProductResponse$ProductResponseBuilder.class
+com\microservice\productservice\payload\response\ProductResponse.class
+com\microservice\productservice\entity\Product.class
