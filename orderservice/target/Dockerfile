@@ -5,22 +5,22 @@ FROM ubuntu:latest
 RUN apt-get update && \
     apt-get install -y curl
 
-# Download and install OpenJDK 21
-RUN curl -O https://download.java.net/java/early_access/jdk21/29/GPL/openjdk-21_linux-x64_bin.tar.gz && \
-    tar -zxvf openjdk-21_linux-x64_bin.tar.gz && \
-    mv jdk-21 /usr/local/openjdk-21 && \
-    rm openjdk-21_linux-x64_bin.tar.gz
+#downloading java-21
+RUN curl -O https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
+
+#Installing the package
+RUN dpkg -i jdk-21_linux-x64_bin.deb
+
 
 # Set environment variables
-ENV JAVA_HOME /usr/local/openjdk-21
-ENV PATH $PATH:$JAVA_HOME/bin
+ENV JAVA_HOME /usr/lib/jvm/java-21-oracle
+ENV PATH $JAVA_HOME/bin:$PATH
 
 # Set the working directory in the container
 WORKDIR /app
 
 # Copy the application JAR and properties file into the container
-COPY target/orderservice-0.0.1-SNAPSHOT.jar /app/orderservice-0.0.1-SNAPSHOT.jar
-COPY application.properties /app/application.properties
+COPY orderservice-0.0.1-SNAPSHOT.jar /app/orderservice-0.0.1-SNAPSHOT.jar
 
 # Specify the command to run your application
-CMD ["java", "-jar", "orderservice-0.0.1-SNAPSHOT.jar", "--spring.config.location=/app/application.properties"]
+CMD ["java", "-jar", "orderservice-0.0.1-SNAPSHOT.jar" ]
