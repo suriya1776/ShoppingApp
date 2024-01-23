@@ -1,11 +1,27 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:11-jre-slim
+# Use Ubuntu as the base image
+FROM ubuntu:latest
 
-# Set the working directory to /app
+# Update the package list and install necessary tools
+RUN apt-get update && \
+    apt-get install -y curl
+
+#downloading java-21
+RUN curl -O https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
+
+#Installing the package
+RUN dpkg -i jdk-21_linux-x64_bin.deb
+
+
+# Set environment variables
+ENV JAVA_HOME /usr/lib/jvm/java-21-oracle
+ENV PATH $JAVA_HOME/bin:$PATH
+
+# Set the working directory in the container
 WORKDIR /app
 
+
 # Copy the JAR file into the container at /app
-COPY productservice-0.0.1-SNAPSHOT.jar /app/
+COPY productservice-0.0.1-SNAPSHOT.jar /app/productservice-0.0.1-SNAPSHOT.jar
 
 # Specify the command to run on container start
 CMD ["java", "-jar", "productservice-0.0.1-SNAPSHOT.jar"]
