@@ -19,6 +19,8 @@ ENV PATH $JAVA_HOME/bin:$PATH
 # Set the working directory in the container
 WORKDIR /app
 
+COPY src/main/resources/application.properties /app/application.properties
+
 # Copy the application JAR and properties file into the container
 COPY orderservice-0.0.1-SNAPSHOT.jar /app/orderservice-0.0.1-SNAPSHOT.jar
 
