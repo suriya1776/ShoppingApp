@@ -41,19 +41,21 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Jakarta Messaging (JMS) API -->
+
+
+<!-- Jakarta Messaging (JMS) Connection Factory Implementation (ActiveMQ) -->
+<dependency>
+    <groupId>org.apache.activemq</groupId>
+    <artifactId>artemis-jms-client</artifactId>
+    <version>2.18.0</version> <!-- Use the latest version available -->
+</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
-		<plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <configuration>
-                <profiles>
-                    <profile>dev</profile>
-                </profiles>
-            </configuration>
-        </plugin>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

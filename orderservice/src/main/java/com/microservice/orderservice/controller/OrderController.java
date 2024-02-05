@@ -20,6 +20,8 @@ public class OrderController {
 
     @PostMapping("/placeorder")
     public ResponseEntity<Long> placeOrder(@RequestBody OrderRequest orderRequest) {
+    	
+    	System.out.println("In API");
 
         log.info("OrderController | placeOrder is called");
 

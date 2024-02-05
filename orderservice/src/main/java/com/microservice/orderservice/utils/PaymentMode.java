@@ -1,5 +1,10 @@
 package com.microservice.orderservice.utils;
 
-public class PaymentMode {
+public enum PaymentMode {
+	
+	 CREDIT_CARD,
+	    DEBIT_CARD,
+	    NET_BANKING,
+	    CASH
 
 }

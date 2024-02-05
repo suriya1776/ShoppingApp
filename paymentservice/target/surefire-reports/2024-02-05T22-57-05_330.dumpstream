@@ -1,4 +1,4 @@
-# Created at 2024-02-03T23:09:28.223
+# Created at 2024-02-05T22:57:05.585
 Boot Manifest-JAR contains absolute paths in classpath 'D:\CodeSpace\EclipseWS\ShoppingApp\paymentservice\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 'other' has different root
