@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/payment")
 @RequiredArgsConstructor
 @Log4j2
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PaymentController {
 	
 	
