@@ -17,7 +17,7 @@ ENV PATH $PATH:$JAVA_HOME/bin
 WORKDIR /app
 
 # Set the active Spring profile to 'prod'
-ENV SPRING_PROFILES_ACTIVE=prod
+# ENV SPRING_PROFILES_ACTIVE=prod
 
 # Copy the application JAR and properties file into the container
 COPY orderservice-0.0.1-SNAPSHOT.jar /app/orderservice-0.0.1-SNAPSHOT.jar
