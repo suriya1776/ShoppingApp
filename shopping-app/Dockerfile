@@ -1,18 +1,17 @@
 # Use Node.js as the base image for building the app
-FROM node:18-alpine
+FROM node:20-alpine
 
 # Set the working directory in the container
-WORKDIR /app/
+WORKDIR /app
 
 # Copy package.json and package-lock.json to the container
-COPY public/ /app/public
-COPY scr/ /app/scr
-COPY package.json  /app/
+COPY package*.json  ./
 
 # Install dependencies
 RUN npm install
 
-# Expose port 80
-EXPOSE 80
+COPY . .
 
-CMD ["npm", "start"]
+EXPOSE 3000
+
+CMD ["npm" , "start"]
